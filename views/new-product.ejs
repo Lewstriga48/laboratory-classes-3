@@ -9,16 +9,13 @@
     <%- include('./partials/navigation.ejs', { menuLinks, activeLinkPath }) %>
 
     <main>
-      <h1 class="heading">Products</h1>
+      <h1 class="heading">Newest Product</h1>
 
-      <% if (products.length > 0) { %>
-        <ul>
-          <% products.forEach(product => { %>
-            <li>Name: <%= product.name %>, Description: <%= product.description %></li>
-          <% }) %>
-        </ul>
+      <% if (newestProduct && newestProduct.name && newestProduct.description) { %>
+        <p><strong>Name:</strong> <%= newestProduct.name %></p>
+        <p><strong>Description:</strong> <%= newestProduct.description %></p>
       <% } else { %>
-        <div>No products available.</div>
+        <div>No data available.</div>
       <% } %>
     </main>
   </body>

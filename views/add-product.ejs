@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= headTitle %></title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <%- include('./partials/navigation.ejs', { menuLinks, activeLinkPath }) %>
+
+    <main>
+      <h1 class="heading">Add Product</h1>
+      <form class="form" action="/products/add" method="POST">
+        <div class="form__group">
+          <label class="form__label" for="name">Name</label>
+          <input class="form__input" type="text" name="name" id="name" required />
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="description">Description</label>
+          <input class="form__input" type="text" name="description" id="description" required />
+        </div>
+        <button class="button" type="submit">Add Product</button>
+      </form>
+    </main>
+  </body>
+</html>
